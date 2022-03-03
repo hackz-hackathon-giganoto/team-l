@@ -1,10 +1,14 @@
 import { useRouter } from "next/router"
 import React from "react"
+import { UserPage } from "~/components/domain/userPage"
 
 const User = () => {
   const router = useRouter()
   return(
-    <div>userName:{router.query.userName}</div>
+    <div>
+      <UserPage/>
+      userName:{router.query.userName}
+    </div>
   )
 }
 

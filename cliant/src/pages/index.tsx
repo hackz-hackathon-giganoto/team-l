@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
+import { HomePage } from '~/components/domain/homePage';
 
 const Home: NextPage = () => {
   return (
     <div>
-      hoge
+      <HomePage/>
     </div>
   );
 };

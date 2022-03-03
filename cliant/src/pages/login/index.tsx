@@ -1,8 +1,10 @@
 import React from "react";
+import { LoginPage } from "~/components/domain/loginPage";
+
 const Login = () => {
   return(
     <div>
-      login
+      <LoginPage />
     </div>
   )
 }
