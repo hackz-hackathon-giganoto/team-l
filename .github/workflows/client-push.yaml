@@ -3,7 +3,7 @@ name: client-test
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
       - "**"
 
@@ -30,4 +30,4 @@ jobs:
         run: yarn
 
       - name: Typecheck 👀
-        run: yarn typecheck
+        run: yarn workspace cliant typecheck
