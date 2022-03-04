@@ -5,5 +5,5 @@ export const DmPage = () => {
     <div>
       DmPage
     </div>
-  )
-}
+  );
+};

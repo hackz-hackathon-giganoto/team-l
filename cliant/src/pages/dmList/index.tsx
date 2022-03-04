@@ -6,7 +6,7 @@ const DmList = () => {
     <div>
       <DmListPage/>
     </div>
-  )
-}
+  );
+};
 
 export default DmList; 

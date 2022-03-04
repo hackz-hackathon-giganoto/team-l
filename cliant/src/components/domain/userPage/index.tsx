@@ -5,5 +5,5 @@ export const UserPage = () => {
     <div>
       UserPage
     </div>
-  )
-}
+  );
+};

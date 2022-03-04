@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react"
+import React from "react";
 import { BookPage } from "~/components/domain/bookPage";
 
 const BookDetail = () => {
@@ -10,7 +10,7 @@ const BookDetail = () => {
       <BookPage/>
       book:{router.query.bookId}
     </div>
-  )
-}
+  );
+};
 
-export default BookDetail
+export default BookDetail;

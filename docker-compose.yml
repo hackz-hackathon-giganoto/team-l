@@ -8,3 +8,9 @@ services:
     # networks:
     #   ecs-network:
     #     ipv4_address: 172.30.0.3
+  web:
+    build: 
+      dockerfile: ./cliant/dockerfile
+    command: sh -c "yarn dev"
+    ports:
+      - "3000:3000"

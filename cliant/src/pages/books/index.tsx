@@ -6,7 +6,7 @@ const Books = () => {
     <div>
       <BookListPage/>
     </div>
-  )
-}
+  );
+};
 
 export default Books;
