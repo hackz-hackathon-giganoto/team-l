@@ -1,0 +1,10 @@
+{
+  "name": "giganoto-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hackz-hackathon-giganoto/team-l.git",
+  "author": "shu20031026 <shu20031026@gmail.com>",
+  "license": "MIT",
+  "workspaces": ["cliant"],
+  "private": "true"
+}
