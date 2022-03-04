@@ -1,7 +1,7 @@
 # team-l
 
 ## cliant
-
+- http://localhost:3000
 #### ドメイン
 
 - 書籍一覧ページ : /home 
@@ -12,4 +12,7 @@
 - DM一覧 : /dm
 - DM : /dm/{user-name} - {username}
 
-## server
+## api-server
+- http://localhost:8080
+
+## grpc-server
