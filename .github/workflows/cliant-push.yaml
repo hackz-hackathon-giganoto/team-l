@@ -7,13 +7,6 @@ on:
     paths:
       - "**"
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - "**"
-
 jobs:
   typecheck:
     runs-on: ${{ matrix.os }}
