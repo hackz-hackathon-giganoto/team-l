@@ -15,9 +15,8 @@ services:
     ports:
       - "3000:3000"
   proto:
-    command: sh ./proto/scripts/protoc.sh
+    command: sh proto/scripts/protoc.sh
     build:
-      context: .
-      dockerfile: DockerfileProto
+      dockerfile: ./proto/dockerfile
     volumes:
       - .:/proto
