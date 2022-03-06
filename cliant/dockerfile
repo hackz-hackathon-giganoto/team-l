@@ -1,5 +1,5 @@
 FROM node as web
 
 WORKDIR /next/src
-COPY ./cliant /next/src/
+COPY ./client /next/src/
 

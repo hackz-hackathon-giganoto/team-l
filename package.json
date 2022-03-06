@@ -5,6 +5,6 @@
   "repository": "git@github.com:hackz-hackathon-giganoto/team-l.git",
   "author": "shu20031026 <shu20031026@gmail.com>",
   "license": "MIT",
-  "workspaces": ["cliant"],
+  "workspaces": ["client"],
   "private": "true"
 }

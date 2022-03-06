@@ -1,6 +1,6 @@
 # team-l
 
-## cliant
+## client
 - http://localhost:3000
 #### ドメイン
 

@@ -10,7 +10,7 @@ services:
     #     ipv4_address: 172.30.0.3
   web:
     build: 
-      dockerfile: ./cliant/dockerfile
+      dockerfile: ./client/dockerfile
     command: sh -c "yarn dev"
     ports:
       - "3000:3000"

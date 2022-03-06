@@ -30,4 +30,4 @@ jobs:
         run: yarn
 
       - name: Typecheck 👀
-        run: yarn workspace cliant typecheck
+        run: yarn workspace client typecheck
