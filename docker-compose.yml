@@ -14,3 +14,10 @@ services:
     command: sh -c "yarn dev"
     ports:
       - "3000:3000"
+  proto:
+    command: sh ./proto/scripts/protoc.sh
+    build:
+      context: .
+      dockerfile: DockerfileProto
+    volumes:
+      - .:/proto
