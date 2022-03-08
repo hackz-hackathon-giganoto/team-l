@@ -2,4 +2,4 @@ FROM node as web
 
 WORKDIR /next/src
 COPY ./client /next/src/
-
+RUN yarn install

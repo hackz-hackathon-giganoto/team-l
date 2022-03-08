@@ -9,8 +9,7 @@
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint ./src --ext .js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write src/*",
-    "typecheck": "tsc --noEmit",
-    "prepare": "git config --local core.hooksPath .githooks"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.3.0",

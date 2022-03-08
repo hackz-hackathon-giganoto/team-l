@@ -1,11 +1,11 @@
-import * as jspb from 'google-protobuf'
+import * as jspb from "google-protobuf";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-
 
 export class MessageRequest extends jspb.Message {
   getMessage(): string;
-  setMessage(value: string): MessageRequest;
+  setMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MessageRequest.AsObject;
@@ -23,7 +23,7 @@ export namespace MessageRequest {
 
 export class MessageResponse extends jspb.Message {
   getMessage(): string;
-  setMessage(value: string): MessageResponse;
+  setMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MessageResponse.AsObject;

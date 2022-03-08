@@ -7,25 +7,23 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 
-/* eslint-disable */
-// @ts-nocheck
-
-
 import * as grpcWeb from 'grpc-web';
 
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as messenger_pb from './messenger_pb';
 
+import {
+  MessageRequest,
+  MessageResponse} from './messenger_pb';
 
 export class MessengerClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
-  options_: null | { [index: string]: any; };
+  options_: null | { [index: string]: string; };
 
   constructor (hostname: string,
                credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: any; }) {
+               options?: null | { [index: string]: string; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
     options['format'] = 'text';
@@ -36,69 +34,45 @@ export class MessengerClient {
     this.options_ = options;
   }
 
-  methodDescriptorGetMessages = new grpcWeb.MethodDescriptor(
-    '/messenger.Messenger/GetMessages',
-    grpcWeb.MethodType.SERVER_STREAMING,
-    google_protobuf_empty_pb.Empty,
-    messenger_pb.MessageResponse,
+  methodInfoGetMessages = new grpcWeb.AbstractClientBase.MethodInfo(
+    MessageResponse,
     (request: google_protobuf_empty_pb.Empty) => {
       return request.serializeBinary();
     },
-    messenger_pb.MessageResponse.deserializeBinary
+    MessageResponse.deserializeBinary
   );
 
   getMessages(
     request: google_protobuf_empty_pb.Empty,
-    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<messenger_pb.MessageResponse> {
+    metadata?: grpcWeb.Metadata) {
     return this.client_.serverStreaming(
       this.hostname_ +
         '/messenger.Messenger/GetMessages',
       request,
       metadata || {},
-      this.methodDescriptorGetMessages);
+      this.methodInfoGetMessages);
   }
 
-  methodDescriptorCreateMessage = new grpcWeb.MethodDescriptor(
-    '/messenger.Messenger/CreateMessage',
-    grpcWeb.MethodType.UNARY,
-    messenger_pb.MessageRequest,
-    messenger_pb.MessageResponse,
-    (request: messenger_pb.MessageRequest) => {
+  methodInfoCreateMessage = new grpcWeb.AbstractClientBase.MethodInfo(
+    MessageResponse,
+    (request: MessageRequest) => {
       return request.serializeBinary();
     },
-    messenger_pb.MessageResponse.deserializeBinary
+    MessageResponse.deserializeBinary
   );
 
   createMessage(
-    request: messenger_pb.MessageRequest,
-    metadata: grpcWeb.Metadata | null): Promise<messenger_pb.MessageResponse>;
-
-  createMessage(
-    request: messenger_pb.MessageRequest,
+    request: MessageRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: messenger_pb.MessageResponse) => void): grpcWeb.ClientReadableStream<messenger_pb.MessageResponse>;
-
-  createMessage(
-    request: messenger_pb.MessageRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: messenger_pb.MessageResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/messenger.Messenger/CreateMessage',
-        request,
-        metadata || {},
-        this.methodDescriptorCreateMessage,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/messenger.Messenger/CreateMessage',
-    request,
-    metadata || {},
-    this.methodDescriptorCreateMessage);
+    callback: (err: grpcWeb.Error,
+               response: MessageResponse) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/messenger.Messenger/CreateMessage',
+      request,
+      metadata || {},
+      this.methodInfoCreateMessage,
+      callback);
   }
 
 }
