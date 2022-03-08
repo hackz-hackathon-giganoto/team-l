@@ -11,9 +11,8 @@ protoc --proto_path=proto messenger.proto \
   --js_out=import_style=commonjs:${CLIENT_OUTPUT_DIR} \
   --grpc-web_out=import_style=typescript,mode=grpcwebtext:${CLIENT_OUTPUT_DIR}
 
-
-# protoc proto/helloworld.proto \
-#     --js_out=import_style=commonjs:cliant/helloworld \
-#     --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:cliant/helloworld \
-#     --go-grpc_out=api/helloworld \
-#     --go_out=api/helloworld
+# protoc --proto_path=proto messenger.proto\
+#     --js_out=import_style=commonjs:client/messenger \
+#     --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:client/messenger \
+#     --go-grpc_out=grpc-server/messenger \
+#     --go_out=grpc-server/messenger
