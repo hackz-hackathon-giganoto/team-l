@@ -6,7 +6,7 @@ import (
 	"net"
 	"time"
 
-	pb "giganoto-app/grpc-server/messenger/proto"
+	pb "./messenger/proto"
 
 	"github.com/golang/protobuf/ptypes/empty"
 
