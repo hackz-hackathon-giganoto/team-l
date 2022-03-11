@@ -9,6 +9,8 @@ services:
     build: 
       dockerfile: ./client/Dockerfile
     command: sh -c "yarn dev"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     ports:
       - "3000:3000"
   # grpc-server:
