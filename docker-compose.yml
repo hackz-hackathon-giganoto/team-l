@@ -11,19 +11,19 @@ services:
     command: sh -c "yarn dev"
     ports:
       - "3000:3000"
-  grpc-server:
-    command: sh grpc-server/scripts/server.sh
-    build:
-      dockerfile: ./grpc-server/Dockerfile
-    volumes:
-      - ./grpc-server:/go/src/grpc--server
-    ports:
-      - "9090:9090"
-    depends_on:
-      - proto
-  proto:
-    command: sh proto/scripts/protoc.sh
-    build:
-      dockerfile: ./proto/Dockerfile
-    volumes:
-      - .:/proto
+  # grpc-server:
+  #   command: sh grpc-server/scripts/server.sh
+  #   build:
+  #     dockerfile: ./grpc-server/Dockerfile
+  #   volumes:
+  #     - ./grpc-server:/go/src/grpc--server
+  #   ports:
+  #     - "9090:9090"
+  #   depends_on:
+  #     - proto
+  # proto:
+  #   command: sh proto/scripts/protoc.sh
+  #   build:
+  #     dockerfile: ./proto/Dockerfile
+  #   volumes:
+  #     - .:/proto
