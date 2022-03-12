@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 export const HomePage = () => {
   return(
     <div>
-      <Button>hoge</Button>
+      <Button>hoge1</Button>
     </div>
   );
 };

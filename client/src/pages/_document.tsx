@@ -1,26 +1,26 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
 import { CssBaseline } from '@nextui-org/react';
+import { NextPage } from 'next';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
+const MyDocument: NextPage = () => {
+  return(
+    <Html>
+      <Head>{CssBaseline.flush()}</Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+};
+
+MyDocument.getInitialProps = async (ctx:DocumentContext): Promise<DocumentInitialProps> => {
+  const initialProps = await ctx.defaultGetInitialProps(ctx);
+  console.log("getInitialProps");
     return {
       ...initialProps,
       styles: <>{initialProps.styles}</>
     };
-  }
-
-  render() {
-    return (
-      <Html>
-        <Head>{CssBaseline.flush()}</Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+};
 
 export default MyDocument;

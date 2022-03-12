@@ -1,4 +1,4 @@
-FROM node as web
+FROM node:16 as web
 
 WORKDIR /next/src
 COPY ./client /next/src/
