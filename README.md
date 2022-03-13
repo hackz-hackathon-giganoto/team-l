@@ -9,8 +9,7 @@
 - サインインページ : /sign-in
 - サインアップページ : /sign-up
 - プロフィール(本棚)ページ : /{user-name}
-- DM一覧 : /dm
-- DM : /dm/{user-name} - {username}
+
 
 ## api-server
 - http://localhost:8080
