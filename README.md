@@ -10,7 +10,6 @@
 - サインアップページ : /sign-up
 - プロフィール(本棚)ページ : /{user-name}
 
-
 ## api-server
 - http://localhost:8080
 
@@ -20,33 +19,33 @@
 erDiagram
 
 books_article{
-  article_id string
-  user_id string
-  isbn string
+  article_id char
+  user_id char
+  isbn char
   date int
-  article string
-  lend bool
+  article text
+  lend char
 }
 
 user{
-  user_id string
-  name string
-  introduction string
-  Twitter string
-  github string
-  image string
-  auth_uid string
+  user_id char
+  name char
+  introduction char
+  Twitter char
+  github char
+  image char
+  auth_uid char
 }
 
 tag{
-  tag_id string
-  tag_name string
+  tag_id char
+  tag_name char
 }
 
 article_tag{
-  tag_map_id string
-  tag_id string
-  article_id string
+  tag_map_id char
+  tag_id char
+  article_id char
 }
 
 ```
