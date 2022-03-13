@@ -66,7 +66,20 @@ apiサーバ: ```go run server.go```
 - 投稿詳細取得(GET) : /books/:id
 ```json
 {
-  
+  article_id: "00000",
+  isbn: "0000000000000",
+  name: "bookA",
+  author: "kosen taro",
+  postUserId: "000",
+  posrUserName: "fukke0906",
+  publicationDate: "20001010",
+  article: "めっちゃいい",
+  lend: true,
+  techTag:[
+    "JavaScript",
+    "Node.js",
+    "Express"
+  ]
 }
 ```
 - 投稿(POST) : /books/:id
