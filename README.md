@@ -39,6 +39,8 @@ apiサーバ: ```go run server.go```
       isbn: "0000000000000",
       name: "bookA",
       author: "kosen taro",
+      postUserId: "000",
+      posrUserName: "fukke0906",
       publicationDate: "20001010",
       article: "めっちゃいい",
       lend: true,
@@ -68,23 +70,9 @@ apiサーバ: ```go run server.go```
 }
 ```
 - 投稿(POST) : /books/:id
-```json
-{
-  
-}
-```
 - 投稿修正(PUT) : /books/:id
-```json
-{
-  
-}
-```
 - 投稿削除(DELETE) : /books/:id
-```json
-{
-  
-}
-```
+
 
 ## DB(MySQL)
 
