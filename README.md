@@ -15,6 +15,20 @@
 
 #### ドメイン
 
+- エンドポイント : /
+
+ユーザ関連
+- ユーザー詳細情報取得(GET) : /user/:id
+- ユーザ登録(POST) : /user/:id
+- ユーザ情報更新(PUT) : /user/:id
+
+投稿関連
+- 投稿一覧取得(GET) : /books
+- 投稿詳細取得(GET) : /books/:id
+- 投稿(POST) : /books/:id
+- 投稿修正(PUT) : /books/:id
+- 投稿削除(DELETE) : /books/:id
+
 ## DB(MySQL)
 
 ```mermaid
