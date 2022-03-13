@@ -64,7 +64,7 @@ apiサーバ: ```go run server.go```
 }
 ```
 - 投稿詳細取得(GET) : /books/:id
-```json
+```
 {
   article_id: "00000",
   isbn: "0000000000000",
