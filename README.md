@@ -58,9 +58,39 @@ apiサーバ: ```go run server.go```
 
 投稿関連
 - 投稿一覧取得(GET) : /books
-```json
+```
 {
-  
+  article_id: "00000",
+  isbn: "0000000000000",
+  name: "bookA",
+  author: "kosen taro",
+  postUserId: "000",
+  posrUserName: "fukke0906",
+  publicationDate: "20001010",
+  article: "めっちゃいい",
+  lend: true,
+  techTag:[
+    "JavaScript",
+    "Node.js",
+    "Express"
+  ]
+},
+{
+  article_id: "00001",
+  isbn: "0000000000001",
+  name: "bookB",
+  author: "kosen taro",
+  postUserId: "001",
+  posrUserName: "fukke0906",
+  publicationDate: "20001010",
+  article: "めっちゃいい, sugeeee",
+  lend: true,
+  techTag:[
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "Go"
+  ]
 }
 ```
 - 投稿詳細取得(GET) : /books/:id
