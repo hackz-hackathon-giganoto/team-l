@@ -17,9 +17,15 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/", hello)
-	e.GET("/test", userHandler.UserHandlerTest)
-	e.GET("/books", booksArticleHandler.BooksArticleHandlerTest)
-
+	e.GET("/user", userHandler.UserHandlerTest)
+	// e.GET("/user/:id", ) // ユーザー詳細情報取得
+	// e.POST("/user/:id", ) // ユーザ登録
+	// e.PUT("/user/:id",) // ユーザ情報更新
+	e.GET("/books", booksArticleHandler.BooksArticleHandlerTest) // 投稿一覧取得
+	// e.GET("/books/:id", ) // 投稿詳細取得
+	// e.POST("/books/:id",) // 投稿
+	// e.PUT("/books/:id",) // 投稿修正
+	// e.DELETE("/books/:id",) // 投稿削除
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
