@@ -23,10 +23,10 @@ func checkError(err error) {
 func main() {
 	loadEnv()
 
-	// Initialize connection string.
+	// 接続文字列を初期化します。
 	var connectionString = fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?allowNativePasswords=true", user, password, host, database)
 
-	// Initialize connection object.
+	// 接続オブジェクトを初期化する。
 	db, err := sql.Open("mysql", connectionString)
 	checkError(err)
 	defer db.Close()
@@ -35,17 +35,17 @@ func main() {
 	checkError(err)
 	fmt.Println("Successfully created connection to database.")
 
-	// Drop previous table of same name if one exists.
+	// 同名の以前のテーブルがあれば削除する。
 	_, err = db.Exec("DROP TABLE IF EXISTS inventory;")
 	checkError(err)
 	fmt.Println("Finished dropping table (if existed).")
 
-	// Create table.
+	// テーブルを作成します。
 	_, err = db.Exec("CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);")
 	checkError(err)
 	fmt.Println("Finished creating table.")
 
-	// Insert some data into table.
+	// テーブルにデータを挿入する。
 	sqlStatement, err := db.Prepare("INSERT INTO inventory (name, quantity) VALUES (?, ?);")
 	res, err := sqlStatement.Exec("banana", 150)
 	checkError(err)
