@@ -13,6 +13,8 @@
 ## api-server
 - http://localhost:8080
 
+#### ドメイン
+
 ## DB(MySQL)
 
 ```mermaid
