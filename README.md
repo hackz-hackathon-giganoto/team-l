@@ -22,7 +22,7 @@ books_article{
   article_id char
   user_id char
   isbn char
-  date int
+  date datetime
   article text
   lend char
 }
