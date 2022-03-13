@@ -43,7 +43,7 @@ tag{
   tag_name string
 }
 
-tag_map{
+article_tag{
   tag_map_id string
   tag_id string
   article_id string
