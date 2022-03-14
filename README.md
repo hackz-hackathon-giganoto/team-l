@@ -91,6 +91,7 @@ apiサーバ: ```go run server.go```
   author: "kosen taro",
   postUserId: "000",
   postUserName: "fukke0906",
+  publicationDate: "20001010",
   article: "めっちゃいい",
   lend: true
 }
@@ -124,7 +125,7 @@ user{
   user_id char
   name char
   introduction char
-  Twitter char
+  twitter char
   github char
   image char
   auth_uid char
