@@ -113,6 +113,15 @@ apiサーバ: ```go run server.go```
 }
 ```
 - 投稿(POST) : /books/:id
+```
+{
+  userId: string,
+  articleId: string,
+  isbn: string,
+  article: string,
+  lend: boolean
+}
+```
 - 投稿修正(PUT) : /books/:id
 - 投稿削除(DELETE) : /books/:id
 
