@@ -131,32 +131,32 @@ apiサーバ: ```go run server.go```
 erDiagram
 
 books_article{
-  article_id char()
-  user_id char()
-  isbn char()
+  article_id char(100)
+  user_id char(100)
+  isbn char(100)
   article text 
-  lend char()
+  lend char(100)
 }
 
 user{
-  user_id char()
-  name char()
-  introduction char()
-  Twitter char()
-  github char()
-  image char()
-  auth_uid char()
+  user_id char(100)
+  name char(100)
+  introduction char(100)
+  Twitter char(100)
+  github char(100)
+  image char(100)
+  auth_uid char(100)
 }
 
 tag{
-  tag_id char()
-  tag_name char()
+  tag_id char(100)
+  tag_name char(100)
 }
 
 article_tag{
-  tag_map_id char()
-  tag_id char()
-  article_id char()
+  tag_map_id char(100)
+  tag_id char(100)
+  article_id char(100)
 }
 
 ```
