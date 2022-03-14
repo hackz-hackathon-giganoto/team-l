@@ -115,7 +115,6 @@ apiサーバ: ```go run server.go```
 - 投稿(POST) : /books/:id
 ```
 {
-  userId: string,
   isbn: string,
   article: string,
   lend: boolean
