@@ -43,12 +43,7 @@ apiサーバ: ```go run server.go```
       posrUserName: "fukke0906",
       publicationDate: "20001010",
       article: "めっちゃいい",
-      lend: true,
-      techTag:[
-        "JavaScript",
-        "Node.js",
-        "Express"
-      ]
+      lend: true
     }
   ]
 }
