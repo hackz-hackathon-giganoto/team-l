@@ -68,12 +68,7 @@ apiサーバ: ```go run server.go```
   posrUserName: "fukke0906",
   publicationDate: "20001010",
   article: "めっちゃいい",
-  lend: true,
-  techTag:[
-    "JavaScript",
-    "Node.js",
-    "Express"
-  ]
+  lend: true
 },
 {
   article_id: "00001",
@@ -84,13 +79,7 @@ apiサーバ: ```go run server.go```
   posrUserName: "fukke0906",
   publicationDate: "20001010",
   article: "めっちゃいい, sugeeee",
-  lend: true,
-  techTag:[
-    "JavaScript",
-    "Node.js",
-    "Express",
-    "Go"
-  ]
+  lend: true
 }
 ```
 - 投稿詳細取得(GET) : /books/:id
@@ -101,15 +90,9 @@ apiサーバ: ```go run server.go```
   name: "bookA",
   author: "kosen taro",
   postUserId: "000",
-  posrUserName: "fukke0906",
-  publicationDate: "20001010",
+  postUserName: "fukke0906",
   article: "めっちゃいい",
-  lend: true,
-  techTag:[
-    "JavaScript",
-    "Node.js",
-    "Express"
-  ]
+  lend: true
 }
 ```
 - 投稿(POST) : /books/:id
