@@ -116,7 +116,6 @@ apiサーバ: ```go run server.go```
 ```
 {
   userId: string,
-  articleId: string,
   isbn: string,
   article: string,
   lend: boolean
