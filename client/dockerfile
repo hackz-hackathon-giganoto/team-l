@@ -1,5 +1,6 @@
 FROM node:16 as web
 
 WORKDIR /next/src
-COPY ./client /next/src/
+COPY ./ /next/src/
 RUN yarn install
+RUN yarn build
