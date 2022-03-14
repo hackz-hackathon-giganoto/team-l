@@ -23,6 +23,12 @@ type PostArticle struct {
 	Lend    bool   `json:"lend"`
 }
 
+// // 投稿詳細取得(GET)
+
+// func GetArticleHandler(c echo.Context) error {
+
+// }
+
 // 投稿(POST)
 func PostArticleHandler(c echo.Context) error {
 	post := new(PostArticle)

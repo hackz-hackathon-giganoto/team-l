@@ -19,7 +19,7 @@ func main() {
 	e.GET("/", hello)
 	e.GET("/user", userHandler.UserHandlerTest)
 	// e.GET("/user/:id", ) // ユーザー詳細情報取得
-	// e.POST("/user/:id", ) // ユーザ登録
+	e.POST("/user/:id", userHandler.UserPostHandler) // ユーザ登録
 	// e.PUT("/user/:id",) // ユーザ情報更新
 	e.GET("/books", booksArticleHandler.BooksArticleHandlerTest) // 投稿一覧取得
 	// e.GET("/books/:id", ) // 投稿詳細取得
