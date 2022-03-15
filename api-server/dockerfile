@@ -2,6 +2,7 @@ FROM golang:1.17
 
 WORKDIR /go/src
 COPY . /go/src/
+# COPY ./api-server /go/src/
 
 ENV CGO_ENABLED=0 \
     GOOS=linux \
