@@ -59,6 +59,5 @@ func UserPostHandler(c echo.Context) error {
 	}
 
 	tx.Commit()
-
 	return c.JSON(http.StatusCreated, "ok")
 }
