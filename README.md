@@ -48,7 +48,7 @@ apiサーバ: ```go run server.go```
   ]
 }
 ```
-- ユーザ登録(POST) : /user/:id
+- ユーザ登録(POST) : /user
 - ユーザ情報更新(PUT) : /user/:id
 
 投稿関連
