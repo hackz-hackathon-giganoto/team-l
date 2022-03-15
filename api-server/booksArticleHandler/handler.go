@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"net/http"
-	"net/url"
 
 	_ "github.com/go-sql-driver/mysql"
 
@@ -57,17 +56,6 @@ func GetArticleHandler(c echo.Context) error {
 	err = rows.Err()
 	mysqlgo.CheckError(err)
 
-	// 外部API
-	baseUrl := "https://api.openbd.jp/v1/get"
-	baseQuery := "?isbn="
-
-	endpointURL, err := url.Parse(baseUrl + baseQuery + isbn)
-	if err != nil {
-		return err
-	}
-
-	fmt.Println(endpointURL)
-
 	fetchData, err := tools.FetchBooksData(isbn)
 	if err != nil {
 		return err
@@ -115,8 +103,6 @@ func PostArticleHandler(c echo.Context) error {
 
 	//接続文字列を初期化します。
 	var connectionString = mysqlgo.InitDB()
-
-	fmt.Println(connectionString)
 
 	// 接続オブジェクトを初期化する。
 	db, err := sql.Open("mysql", connectionString)
