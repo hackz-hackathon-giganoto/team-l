@@ -4,14 +4,11 @@ import (
 	"database/sql"
 	"fmt"
 	"main/mysqlgo"
+	"main/tools"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
-
-func UserHandlerTest(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, user!")
-}
 
 type PostUser struct {
 	UserName     string `json: "userName"`
@@ -23,7 +20,7 @@ type PostUser struct {
 
 func UserPostHandler(c echo.Context) error {
 	post := new(PostUser)
-	userId := c.Param("id")
+	userId := tools.GenId()
 
 	if err := c.Bind(post); err != nil {
 		return err
