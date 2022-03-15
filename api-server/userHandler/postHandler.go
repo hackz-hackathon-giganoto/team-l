@@ -11,11 +11,11 @@ import (
 )
 
 type PostUser struct {
-	UserName     string `json: "userName"`
-	Introduction string `json: "introduction"`
-	Image        string `json: "image"`
-	Twitter      string `json: "twitter"`
-	Github       string `json: "github"`
+	UserName     string
+	Introduction string
+	Image        string
+	Twitter      string
+	Github       string
 }
 
 func UserPostHandler(c echo.Context) error {
@@ -43,14 +43,13 @@ func UserPostHandler(c echo.Context) error {
 
 	err = db.Ping()
 	mysqlgo.CheckError(err)
-	fmt.Println("Successfully created connection to database.")
 
 	// テーブルにデータを挿入する。
-	sqlStatement, err := db.Prepare(
+	sqlStatement, _ := db.Prepare(
 		"INSERT INTO user (user_id, name, introduction, twitter, github, image) VALUES (?, ?, ?, ?, ?, ?);")
 	res, err := sqlStatement.Exec(userId, userName, introduction, twitter, github, image)
 	mysqlgo.CheckError(err)
-	rowCount, err := res.RowsAffected()
+	rowCount, _ := res.RowsAffected()
 	fmt.Printf("Inserted %d row(s) of data.\n", rowCount)
 
 	return c.JSON(http.StatusCreated, "ok")
