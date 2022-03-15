@@ -40,11 +40,9 @@ func UserGetHandler(c echo.Context) error {
 	rows, err := db.Query(fmt.Sprintf("SELECT * from user WHERE user_id = '%s';", userId))
 	mysqlgo.CheckError(err)
 	defer rows.Close()
-	fmt.Println("Reading data:")
 	for rows.Next() {
 		err := rows.Scan(&user_id, &name, &introduction, &twitter, &github, &image)
 		mysqlgo.CheckError(err)
-		fmt.Printf("Data row = (%s, %s, %s, %s, %s, %s)\n", user_id, name, introduction, twitter, github, image)
 	}
 	err = rows.Err()
 	mysqlgo.CheckError(err)
@@ -88,11 +86,9 @@ func UserGetHandler(c echo.Context) error {
 	articleRows, err := db.Query(fmt.Sprintf("SELECT article_id, isbn, article, lend from books_article WHERE user_id = '%s';", userId))
 	mysqlgo.CheckError(err)
 	defer articleRows.Close()
-	fmt.Println("Reading data:")
 	for articleRows.Next() {
 		err := articleRows.Scan(&article_id, &isbn, &article, &lend)
 		mysqlgo.CheckError(err)
-		fmt.Printf("Data row = (%s, %s, %s, %s)\n", article_id, isbn, article, lend)
 		articleData.Article_id = article_id
 		articleData.Isbn = isbn
 		articleData.Article = article
