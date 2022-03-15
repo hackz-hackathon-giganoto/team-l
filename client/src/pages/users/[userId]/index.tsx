@@ -7,7 +7,7 @@ const User = () => {
   return(
     <div>
       <UserPage/>
-      userName:{router.query.userName}
+      userName:{router.query.userId}
     </div>
   );
 };

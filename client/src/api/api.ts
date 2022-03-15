@@ -1,11 +1,11 @@
 import axios from "axios";
-const BASE_URL_LOCAL = "http://localhost:8080";
+const BASE_URL_LOCAL = "http://954f-49-104-48-57.ngrok.io";
 
 const giganotoAxios = axios.create({
   baseURL: BASE_URL_LOCAL
 });
 
-type ArticleBody = {
+export type ArticleBody = {
   userName: string,
   introduction: string,
   image: string,
@@ -13,7 +13,7 @@ type ArticleBody = {
   github: string
 };
 
-type UserRegistBody = {
+export type UserRegistBody = {
   userName: string,
   introduction: string,
   image: string,
