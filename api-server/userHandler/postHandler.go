@@ -2,9 +2,7 @@ package userHandler
 
 import (
 	"database/sql"
-	"fmt"
 	"main/mysqlgo"
-	"main/tools"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -19,8 +17,9 @@ type PostUser struct {
 }
 
 func UserPostHandler(c echo.Context) error {
+	userId := c.Param("id")
 	post := new(PostUser)
-	userId := tools.GenId()
+	// userId := tools.GenId()
 
 	if err := c.Bind(post); err != nil {
 		return err
@@ -41,16 +40,25 @@ func UserPostHandler(c echo.Context) error {
 
 	defer db.Close()
 
-	err = db.Ping()
-	mysqlgo.CheckError(err)
+	tx, err := db.Begin()
+	if err != nil {
+		return err
+	}
+	sqlStatement, _ := tx.Prepare("DELETE FROM user WHERE user_id = ?;")
+	if _, err := sqlStatement.Exec(userId); err != nil {
+		tx.Rollback()
+		return err
+	}
 
 	// テーブルにデータを挿入する。
-	sqlStatement, _ := db.Prepare(
+	sqlStatement2, _ := tx.Prepare(
 		"INSERT INTO user (user_id, name, introduction, twitter, github, image) VALUES (?, ?, ?, ?, ?, ?);")
-	res, err := sqlStatement.Exec(userId, userName, introduction, twitter, github, image)
-	mysqlgo.CheckError(err)
-	rowCount, _ := res.RowsAffected()
-	fmt.Printf("Inserted %d row(s) of data.\n", rowCount)
+	if _, err := sqlStatement2.Exec(userId, userName, introduction, twitter, github, image); err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	tx.Commit()
 
 	return c.JSON(http.StatusCreated, "ok")
 }

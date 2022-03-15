@@ -18,8 +18,8 @@ func main() {
 
 	e.GET("/", hello)
 	e.GET("/user", userHandler.UserHandlerTest)
-	e.GET("/user/:id", userHandler.UserGetHandler) // ユーザー詳細情報取得
-	e.POST("/user", userHandler.UserPostHandler)   // ユーザ登録
+	e.GET("/user/:id", userHandler.UserGetHandler)   // ユーザー詳細情報取得
+	e.POST("/user/:id", userHandler.UserPostHandler) // ユーザ登録 (LineId)
 	// e.PUT("/user/:id",) // ユーザ情報更新
 
 	e.GET("/books", booksArticleHandler.BooksArticleHandlerTest) // 投稿一覧取得
