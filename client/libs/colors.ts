@@ -4,4 +4,4 @@ export const palette = {
 	primary: '#bb8701',
 	secondary: '#0f96c7',
 	grey: '#605c52'
-}
+};

@@ -4,7 +4,6 @@ import { BookPage } from "~/components/domain/bookPage";
 
 const BookDetail = () => {
   const router = useRouter();
-  
   return(
     <div>
       <BookPage/>
