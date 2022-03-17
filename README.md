@@ -74,7 +74,7 @@ apiサーバ: ```go run server.go```
     "github": "nyannnyannnnn"
 }
 ```
-- ユーザ情報更新(PUT) : /user/:id　未実装
+- ユーザ情報更新(PUT) : /user/:id　未実装(putの際にDELETE処理で対応)
 
 投稿関連
 - 投稿一覧取得(GET) : /books 未実装
