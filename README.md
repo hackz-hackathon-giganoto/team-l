@@ -74,28 +74,30 @@
 投稿関連
 - 投稿一覧取得(GET) : /books 未実装
 ```
-{
-  article_id: "00000",
-  isbn: "0000000000000",
-  name: "bookA",
-  author: "kosen taro",
-  postUserId: "000",
-  posrUserName: "fukke0906",
-  publicationDate: "20001010",
-  article: "めっちゃいい",
-  lend: true
-},
-{
-  article_id: "00001",
-  isbn: "0000000000001",
-  name: "bookB",
-  author: "kosen taro",
-  postUserId: "001",
-  posrUserName: "fukke0906",
-  publicationDate: "20001010",
-  article: "めっちゃいい, sugeeee",
-  lend: true
-}
+[
+    {
+      article_id: "00000",
+      isbn: "0000000000000",
+      name: "bookA",
+      author: "kosen taro",
+      postUserId: "000",
+      posrUserName: "fukke0906",
+      publicationDate: "20001010",
+      article: "めっちゃいい",
+      lend: true
+    },
+    {
+      article_id: "00001",
+      isbn: "0000000000001",
+      name: "bookB",
+      author: "kosen taro",
+      postUserId: "001",
+      posrUserName: "fukke0906",
+      publicationDate: "20001010",
+      article: "めっちゃいい, sugeeee",
+      lend: true
+    }
+]
 ```
 - 投稿詳細取得(GET) : /books/:article_id
 ```
