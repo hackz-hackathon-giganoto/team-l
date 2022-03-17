@@ -1,10 +1,5 @@
 # team-l
 
-## 立ち上げ
-全体: ```docker-compose up```
-フロント: ```yarn dev```
-apiサーバ: ```go run server.go```
-
 ## client
 - http://localhost:3000
 #### ドメイン
