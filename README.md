@@ -139,7 +139,6 @@ apiサーバ: ```go run server.go```
 - 投稿修正(PUT) : /books/:id 未実装
 - 投稿削除(DELETE) : /books/:id 未実装
 
-
 ## DB(MySQL)
 
 ```mermaid
