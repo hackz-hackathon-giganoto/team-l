@@ -1,10 +1,5 @@
 # team-l
 
-## 立ち上げ
-全体: ```docker-compose up```
-フロント: ```yarn dev```
-apiサーバ: ```go run server.go```
-
 ## client
 - http://localhost:3000
 #### ドメイン
@@ -74,33 +69,35 @@ apiサーバ: ```go run server.go```
     "github": "nyannnyannnnn"
 }
 ```
-- ユーザ情報更新(PUT) : /user/:id　未実装
+- ユーザ情報更新(PUT) : /user/:id　未実装(putの際にDELETE処理で対応)
 
 投稿関連
 - 投稿一覧取得(GET) : /books 未実装
 ```
-{
-  article_id: "00000",
-  isbn: "0000000000000",
-  name: "bookA",
-  author: "kosen taro",
-  postUserId: "000",
-  posrUserName: "fukke0906",
-  publicationDate: "20001010",
-  article: "めっちゃいい",
-  lend: true
-},
-{
-  article_id: "00001",
-  isbn: "0000000000001",
-  name: "bookB",
-  author: "kosen taro",
-  postUserId: "001",
-  posrUserName: "fukke0906",
-  publicationDate: "20001010",
-  article: "めっちゃいい, sugeeee",
-  lend: true
-}
+[
+    {
+      article_id: "00000",
+      isbn: "0000000000000",
+      name: "bookA",
+      author: "kosen taro",
+      postUserId: "000",
+      posrUserName: "fukke0906",
+      publicationDate: "20001010",
+      article: "めっちゃいい",
+      lend: true
+    },
+    {
+      article_id: "00001",
+      isbn: "0000000000001",
+      name: "bookB",
+      author: "kosen taro",
+      postUserId: "001",
+      posrUserName: "fukke0906",
+      publicationDate: "20001010",
+      article: "めっちゃいい, sugeeee",
+      lend: true
+    }
+]
 ```
 - 投稿詳細取得(GET) : /books/:article_id
 ```
@@ -138,7 +135,6 @@ apiサーバ: ```go run server.go```
 ```
 - 投稿修正(PUT) : /books/:id 未実装
 - 投稿削除(DELETE) : /books/:id 未実装
-
 
 ## DB(MySQL)
 
