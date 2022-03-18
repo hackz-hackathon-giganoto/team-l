@@ -33,7 +33,10 @@ func FetchBooksData(isbn string) (Summary, error) {
 
 	req, _ := http.NewRequest("GET", fmt.Sprintf("%s%s%s", baseUrl, baseQuery, isbn), nil)
 	client := new(http.Client)
-	resp, _ := client.Do(req)
+	resp, err := client.Do(req)
+	if err != nil {
+		return Summary{}, err
+	}
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
