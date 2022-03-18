@@ -45,15 +45,14 @@ func PostArticleHandler(c echo.Context) error {
 	tx, _ := db.Begin()
 
 	// テーブルにデータを挿入する。
-	sqlStatement, err := tx.Prepare(
-		"INSERT INTO books_article (article_id, user_id, isbn, article, lend) VALUES (?, ?, ?, ?, ?);")
+	sqlStatement, _ := tx.Prepare("INSERT INTO books_article (article_id, user_id, isbn, article, lend) VALUES (?, ?, ?, ?, ?);")
 	res, err := sqlStatement.Exec(articleId, userId, isbn, article, lend)
 	if err != nil {
 		tx.Rollback()
 		return err
 	}
 
-	rowCount, err := res.RowsAffected()
+	rowCount, _ := res.RowsAffected()
 	fmt.Printf("Inserted %d row(s) of data.\n", rowCount)
 
 	tx.Commit()
