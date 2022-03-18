@@ -32,9 +32,6 @@ func GetArticleHandler(c echo.Context) error {
 	db, err := sql.Open("mysql", connectionString)
 	mysqlgo.CheckError(err)
 	defer db.Close()
-	err = db.Ping()
-	mysqlgo.CheckError(err)
-	fmt.Println("Successfully created connection to database.")
 
 	// DB構造体定義
 	var (
