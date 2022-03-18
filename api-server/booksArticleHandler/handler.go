@@ -107,17 +107,24 @@ func PostArticleHandler(c echo.Context) error {
 
 	defer db.Close()
 
-	err = db.Ping()
-	mysqlgo.CheckError(err)
-	fmt.Println("Successfully created connection to database.")
+	// err = db.Ping()
+	// mysqlgo.CheckError(err)
+	// fmt.Println("Successfully created connection to database.")
+
+	tx, _ := db.Begin()
 
 	// テーブルにデータを挿入する。
-	sqlStatement, err := db.Prepare(
+	sqlStatement, err := tx.Prepare(
 		"INSERT INTO books_article (article_id, user_id, isbn, article, lend) VALUES (?, ?, ?, ?, ?);")
 	res, err := sqlStatement.Exec(articleId, userId, isbn, article, lend)
-	mysqlgo.CheckError(err)
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+
 	rowCount, err := res.RowsAffected()
 	fmt.Printf("Inserted %d row(s) of data.\n", rowCount)
 
+	tx.Commit()
 	return c.JSON(http.StatusCreated, "ok")
 }
