@@ -27,7 +27,7 @@ func main() {
 	e.POST("/books/:id", booksArticleHandler.PostArticleHandler) // 投稿
 	// e.PUT("/books/:id",) // 投稿修正
 	// e.DELETE("/books/:id",) // 投稿削除
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":80"))
 }
 
 // ハンドラー
