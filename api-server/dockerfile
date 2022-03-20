@@ -1,32 +1,32 @@
-# FROM golang:1.17 
-
-# WORKDIR /go/src
-# COPY . /go/src/
-# # COPY ./api-server /go/src/
-
-# ENV CGO_ENABLED=0 \
-#     GOOS=linux \
-#     GOARCH=amd64
-
-# COPY . .
-# RUN go mod tidy
-
-# RUN go build -o bin/app ./server.go
-
-# CMD ["go", "run", "server.go"]
-
 FROM golang:1.17 
 
 WORKDIR /go/src
-COPY . /go/src
-
-RUN go mod tidy \
-  && go build
+# COPY . /go/src/
+COPY ./api-server /go/src/
 
 ENV CGO_ENABLED=0 \
     GOOS=linux \
     GOARCH=amd64
 
-EXPOSE 80
+COPY . .
+RUN go mod tidy
+
+RUN go build -o bin/app ./server.go
 
 CMD ["go", "run", "server.go"]
+
+# FROM golang:1.17 
+
+# WORKDIR /go/src
+# COPY . /go/src
+
+# RUN go mod tidy \
+#   && go build
+
+# ENV CGO_ENABLED=0 \
+#     GOOS=linux \
+#     GOARCH=amd64
+
+# EXPOSE 80
+
+# CMD ["go", "run", "server.go"]
