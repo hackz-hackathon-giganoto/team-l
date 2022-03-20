@@ -19,7 +19,6 @@ type PostUser struct {
 func UserPostHandler(c echo.Context) error {
 	userId := c.Param("id")
 	post := new(PostUser)
-	// userId := tools.GenId()
 
 	if err := c.Bind(post); err != nil {
 		return err
@@ -33,11 +32,9 @@ func UserPostHandler(c echo.Context) error {
 
 	//接続文字列を初期化します。
 	var connectionString = mysqlgo.InitDB()
-
 	// 接続オブジェクトを初期化する。
 	db, err := sql.Open("mysql", connectionString)
 	mysqlgo.CheckError(err)
-
 	defer db.Close()
 
 	tx, err := db.Begin()

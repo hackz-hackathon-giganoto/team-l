@@ -17,13 +17,12 @@ import (
 func PostArticleHandler(c echo.Context) error {
 	post := new(PostArticle)
 	userId := c.Param("id")
+	articleId := tools.GenId()
 
 	if err := c.Bind(post); err != nil {
 		return err
 	}
 	var lend string
-
-	articleId := tools.GenId()
 
 	isbn := post.Isbn
 	article := post.Article
