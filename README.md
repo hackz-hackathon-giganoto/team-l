@@ -160,3 +160,21 @@ user{
 }
 
 ```
+
+### mysql立ち上げ方法
+イメージのビルド
+```sh
+$ Docker-Compose build
+```
+docker composeの立ち上げ
+```sh
+$ Docker-Compose up -d
+```
+コンテナへのログイン
+```sh
+$ docker exec -it giganoto-app_mysql_1 bash -p
+```
+MySQLの起動
+```sh
+# mysql -u root -p -h 127.0.0.1
+```
