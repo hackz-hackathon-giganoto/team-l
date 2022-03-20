@@ -15,6 +15,7 @@ RUN go build -o bin/app ./server.go
 
 CMD ["go", "run", "server.go"]
 
+# # Azure用
 # FROM golang:1.17 
 
 # WORKDIR /go/src
