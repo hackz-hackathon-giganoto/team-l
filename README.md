@@ -44,7 +44,7 @@
         {
             "articleId": "c8o21de49b3i15qvhme0",
             "isbn": "481561072X",
-            "article": "わかりやすみ!",
+            "article": "わかりやすい!",
             "lend": false,
             "bookData": {
                 "isbn": "9784815610722",
