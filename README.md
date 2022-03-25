@@ -1,4 +1,4 @@
-# team-l
+# team-了解(ハックツハッカソンギガノト杯)
 
 ## client
 - http://localhost:3000
