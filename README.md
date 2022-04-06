@@ -1,4 +1,4 @@
-# team-l
+# team-了解(ハックツハッカソンギガノト杯)
 
 ## client
 - http://localhost:3000
@@ -44,7 +44,7 @@
         {
             "articleId": "c8o21de49b3i15qvhme0",
             "isbn": "481561072X",
-            "article": "わかりやすみ!",
+            "article": "わかりやすい!",
             "lend": false,
             "bookData": {
                 "isbn": "9784815610722",
@@ -159,4 +159,22 @@ user{
   auth_uid char
 }
 
+```
+
+### mysql立ち上げ方法
+イメージのビルド
+```sh
+$ Docker-Compose build
+```
+docker composeの立ち上げ
+```sh
+$ Docker-Compose up -d
+```
+コンテナへのログイン
+```sh
+$ docker exec -it giganoto-app_mysql_1 bash -p
+```
+MySQLの起動
+```sh
+# mysql -u root -p -h 127.0.0.1
 ```
