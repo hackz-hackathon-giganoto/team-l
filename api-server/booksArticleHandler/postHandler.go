@@ -1,4 +1,4 @@
-package booksArticleHandler
+package controller
 
 import (
 	"database/sql"
