@@ -2,7 +2,7 @@ package controller
 
 import (
 	"database/sql"
-	"main/mysqlgo"
+	"main/model"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -31,10 +31,10 @@ func UserPostHandler(c echo.Context) error {
 	github := post.Github
 
 	//接続文字列を初期化します。
-	var connectionString = mysqlgo.InitDB()
+	var connectionString = model.InitDB()
 	// 接続オブジェクトを初期化する。
 	db, err := sql.Open("mysql", connectionString)
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer db.Close()
 
 	tx, err := db.Begin()

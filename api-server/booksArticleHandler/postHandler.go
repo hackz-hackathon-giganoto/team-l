@@ -7,7 +7,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
-	"main/mysqlgo"
+	"main/model"
 	"main/tools"
 
 	"github.com/labstack/echo/v4"
@@ -33,11 +33,11 @@ func PostArticleHandler(c echo.Context) error {
 	}
 
 	//接続文字列を初期化します。
-	var connectionString = mysqlgo.InitDB()
+	var connectionString = model.InitDB()
 
 	// 接続オブジェクトを初期化する。
 	db, err := sql.Open("mysql", connectionString)
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 
 	defer db.Close()
 

@@ -7,7 +7,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
-	"main/mysqlgo"
+	"main/model"
 	"main/tools"
 
 	"github.com/labstack/echo/v4"
@@ -28,9 +28,9 @@ func GetArticleHandler(c echo.Context) error {
 	articleId := c.Param("id")
 
 	// sql初期化
-	var connectionString = mysqlgo.InitDB()
+	var connectionString = model.InitDB()
 	db, err := sql.Open("mysql", connectionString)
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer db.Close()
 
 	// DB構造体定義
@@ -42,16 +42,16 @@ func GetArticleHandler(c echo.Context) error {
 		lend       string
 	)
 	rows, err := db.Query(fmt.Sprintf("SELECT * from books_article WHERE article_id = '%s';", articleId))
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer rows.Close()
 	fmt.Println("Reading data:")
 	for rows.Next() {
 		err := rows.Scan(&article_id, &user_id, &isbn, &article, &lend)
-		mysqlgo.CheckError(err)
+		model.CheckError(err)
 		fmt.Printf("Data row = (%s, %s, %s, %s, %s)\n", article_id, user_id, isbn, article, lend)
 	}
 	err = rows.Err()
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 
 	fetchData, err := tools.FetchBooksData(isbn)
 	if err != nil {

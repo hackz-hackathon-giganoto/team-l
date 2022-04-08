@@ -3,7 +3,7 @@ package controller
 import (
 	"database/sql"
 	"fmt"
-	"main/mysqlgo"
+	"main/model"
 	"main/tools"
 	"net/http"
 
@@ -19,9 +19,9 @@ func UserGetHandler(c echo.Context) error {
 	userId := c.Param("id")
 
 	// sql初期化
-	var connectionString = mysqlgo.InitDB()
+	var connectionString = model.InitDB()
 	db, err := sql.Open("mysql", connectionString)
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer db.Close()
 
 	var (
@@ -35,14 +35,14 @@ func UserGetHandler(c echo.Context) error {
 
 	// ユーザーデータの取得
 	rows, err := db.Query(fmt.Sprintf("SELECT * from user WHERE user_id = '%s';", userId))
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer rows.Close()
 	for rows.Next() {
 		err := rows.Scan(&user_id, &name, &introduction, &twitter, &github, &image)
-		mysqlgo.CheckError(err)
+		model.CheckError(err)
 	}
 	err = rows.Err()
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 
 	type ArticleData struct {
 		Article_id string        `json:"articleId"`
@@ -81,11 +81,11 @@ func UserGetHandler(c echo.Context) error {
 	)
 
 	articleRows, err := db.Query(fmt.Sprintf("SELECT article_id, isbn, article, lend from books_article WHERE user_id = '%s';", userId))
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 	defer articleRows.Close()
 	for articleRows.Next() {
 		err := articleRows.Scan(&article_id, &isbn, &article, &lend)
-		mysqlgo.CheckError(err)
+		model.CheckError(err)
 		articleData.Article_id = article_id
 		articleData.Isbn = isbn
 		articleData.Article = article
@@ -99,7 +99,7 @@ func UserGetHandler(c echo.Context) error {
 	response.ArticleList = articleList
 
 	err = articleRows.Err()
-	mysqlgo.CheckError(err)
+	model.CheckError(err)
 
 	return c.JSON(http.StatusOK, response)
 }

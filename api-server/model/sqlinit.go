@@ -1,4 +1,4 @@
-package mysqlgo
+package model
 
 import (
 	"fmt"
